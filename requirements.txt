@@ -1,0 +1,16 @@
+# FastAPI
+fastapi
+pydantic==1.*
+uvicorn
+asgi-logger
+gunicorn
+motor
+
+python-jose[cryptography]
+httpx
+
+# Weaviate
+weaviate-client==3.24.2 # se deberia migrar a la version 4
+torch==2.1.0
+transformers==4.34.0
+tokenizers==0.14.1
