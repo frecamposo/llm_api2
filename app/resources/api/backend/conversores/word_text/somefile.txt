@@ -1,0 +1,218 @@
+  ----------------------------- -----------------------------------------
+  Nombre estudiante:            
+
+  Asignatura:                   Carrera:
+
+  Profesor:                     Fecha:
+  ----------------------------- -----------------------------------------
+
+Sentencias DML para manipular datos almacenados
+
+Descripción:
+
+Has llegado a la última semana de la Experiencia 2, en la que realizarás
+una actividad sumativa con encargo llamada Sentencias DML para manipular
+datos almacenados, en la que a partir de un modelo de datos que se te
+entrega (script) y usando la herramienta de desarrollo Oracle SQL
+Developer, deberás crear las tablas en la base de datos y construir las
+soluciones para el desarrollo del Sistema Informático. Esto consiste en
+automatizar los requerimientos de información para la gestión de
+arriendo de camiones de TRUCK RENTAL y solucionar las necesidades
+inmediatas que requiere la empresa y que se plantean en cada caso. En
+esta actividad deberás poner atención a los requerimientos que se
+presentan en un contexto laboral.  
+
+Instrucciones específicas: 
+
+-   Lee atentamente el caso y lo que se solicita para resolverlo.
+
+-   Desarrolle el caso planteado usando la herramienta Oracle
+    SQLDeveloper.  
+
+-   Para el caso 1:
+
+-   Conéctate a la base de datos como usuario ADMIN y ejecuta el script
+      crea_usuario_MDY2231_P10.sql que crea el usuario MDY2231_P10.
+
+-   Para construir la solución de los requerimientos de información
+      planteados para el caso, deberás ejecutar el script
+      crea_pobla_tablas_bd_TRUCK_RENTAL.sql que creará y poblará las
+      tablas del modelo que se entrega a continuación.
+
+ 
+
+-   Para el caso 2:
+
+-   Conéctate a la base de datos como usuario ADMIN y ejecuta el script
+      crea_usuario_MDY2231_P9.sql que crea el usuario MDY2231_P9.
+
+-   Para construir la solución de los requerimientos de información
+      planteados para el caso, deberás ejecutar el script
+      crea_pobla_tablas_bd_CONSULTORA_CREA_SOLUCIONES.sql que creará y
+      poblará las tablas del modelo que se entrega a continuación.
+
+-   Para el caso que se plantea, construye la sentencia de consulta SQL
+    necesarias para la generación del informe solicitado. 
+
+-   En los casos que se indique que el informe o proceso debe obtener la
+    información del año anterior, año actual, mes anterior, día
+    siguiente, etc., significa que la sentencia SQL se debe construir
+    usando las funciones adecuadas para obtener la fecha requerida y no
+    usando fechas fijas. 
+
+-   Todos los resultados deben ser redondeados a valores enteros.
+
+Para completar esta actividad, deberás entregar los archivos solicitados
+en un ZIP.
+
+Caso 1:
+
+Contexto de Negocio
+
+Por contrato, a los encargados de arriendo de camiones se les paga una
+comisión por cada camión que arrienden. Está comisión corresponde a un
+porcentaje de su sueldo base según los días en que el camión fue
+arrendado. Adicionalmente, en el mes de diciembre, se les paga una
+bonificación especial a quienes hayan arrendado un total de camiones
+mayor al promedio anual de camiones arrendados por empleado.
+
+Esta última bonificación, por ser anual, no es imponible y tampoco está
+considera como un gasto dentro del presupuesto de TRUCK RENTAL ya que se
+solventa con las utilidades que la empresa obtuvo en el año. La
+información de estos pagos se genera y maneja “informalmente” en
+planillas Excel las que deben son firmadas por el jefe del área de
+finanzas de TRUCK RENTAL y el empleado.
+
+Sin embargo, para beneficiar a los empleados, la Gerencia ha decido que
+a contar del próximo año la bonificación por arriendo será un haber más
+en la remuneración mensual de los encargados de arriendos de acuerdo con
+el total de arriendo de camiones que realizaron durante el mes. Esta
+decisión implica que:
+
+-   Debe ser imponible
+
+-   Debe ser considerada como como parte de los gastos del presupuesto
+      anual de TRUCK RENTAL.
+
+-   Debe ser considerada en el proceso de cálculo de remuneraciones y
+      los beneficiados serán los empleados que en el mes de proceso
+      hayan arrendado un total de camiones mayor al promedio de camiones
+      arrendados por empleado en ese mismo mes.
+
+Esto significará entonces que el área de finanzas tendrá que definir un
+procedimiento formal para gestionar la información de los pagos
+mensuales de esta nueva bonificación. Esta gestión deberá estar apoyada
+con un informe online que, de acuerdo con lo indicado por el usuario,
+debe considerar los datos del empleado, el total de arriendo que realizó
+en el mes y el valor de la bonificación.
+
+El informe se ejecutará 15 minutos antes del proceso de cálculo de
+remuneraciones del mes (que se ejecuta el último día hábil del mes) esto
+significa que, por ejemplo, si el informe se ejecuta en el mes de marzo,
+debe visualizar a los empleados que efectuaron arriendo de camiones en
+ese mismo mes, etc. Por lo tanto, el informe debe ser capaz de obtener
+la información en forma paramétrica. Los resultados entregados por este
+informe y por el proceso de cálculo de remuneraciones serán contrastados
+como chequeo de control.
+
+Además, considerando que el pago de esta bonificación será mensual, la
+empresa ha decido que el valor de la bonificación de arriendo será un
+porcentaje del sueldo base del empleado. El porcentaje corresponderá al
+total de arriendos que el empleado realizó en el mes. Esto significa,
+por ejemplo, que, si el empleado realizó 3 arriendos en el mes, la
+bonificación será un 3% del sueldo base del empleado, etc.
+
+Desde la perspectiva de eficiencia del proceso, Ud. ha definido que la
+información requerida para la consulta online será almacena en forma
+permanente en la tabla BONIF_ARRIENDOS_ANUAL y de esta forma, se tendrá
+la información histórica de los pagos de esta bonificación y así, cada
+vez que se requiera, podrá ser contrastada con los resultados del pago
+de remuneraciones de la fecha que se desee.
+
+La información se almacenará ordenada alfabéticamente por apellido
+paterno del empleado.
+
+En su resultado, el valor de las columnas ANNO_MES,
+TOTAL_ARRIENDOS_MENSUAL y BONIF_ARRIENDOS serán diferentes ya que
+depende del mes en que se ejecute la sentencia. En el ejemplo, la
+sentencia que almacena la información en la tabla BONIF_ARRIENDOS_ANUAL
+se ejecutó en septiembre del año 2020:
+
+Caso 2:
+
+La empresa de consultorías CREA SOLUCIONES es una empresa que se ha
+logrado posicionar como una de las líderes en su rubro a través de
+servicios profesionales que asesoran a empresas y gobiernos en áreas de
+TIC, Recursos Humanos, Gestión, Estrategia y Procesos Industriales.
+
+El liderazgo de CREA SOLUCIONES se debe a que la Gerencia comprendió que
+la consultoría debe estar ligada a la experiencia y al profesionalismo
+de las personas que trabajan en la empresa. Por eso, la capacitación,
+tanto técnica como en habilidades, de sus profesionales es lo que la
+distingue de otras empresas consultoras, garantizando así que sus
+profesionales poseen un conocimiento profundo de su área de
+especialización, habilidades como la capacidad de análisis y exposición
+de resultados, y una actitud de servicio, pro activa, solidaria y
+claramente enfocada al trabajo en equipo.
+
+En la actualidad CREA SOLUCIONES brinda soluciones en las áreas de
+contabilidad, tecnología de la información, logística, la
+administración, marketing, recursos humanos y sistemas de producción de
+bienes y servicios. Administrativamente está divida en 5 áreas de
+consultorías:
+
+-   Contable, divida en dos sub-áreas: Contadores Auditores y Contadores
+      Generales
+
+-   Informática: formada por Ingenieros Informáticos
+
+-   Prevención: formada por Ingenieros Prevencionistas
+
+-   Negocios: formada por Ingenieros Comerciales
+
+-   Optimización de procesos industriales: formada por Ingenieros
+      Industriales
+
+Una de las mejoras consistió en almacenar en diferentes tablas los datos
+de los profesionales Contadores Auditores, Contadores Generales,
+Informáticos, Prevencionistas y otros profesionales. Esta última tabla
+almacena los datos de Ingenieros Comerciales e Ingenieros Industriales.
+Esta modificación se realizó con el objetivo de que los tiempos de
+respuestas de los diferentes procesos e informes sean óptimos.
+
+En una de las entrevistas sostenidas con el usuario, él le mostró una
+planilla Excel con todos los profesionales Ingenieros Comerciales e
+Ingenieros Industriales existentes en la empresa. Sin embargo, al
+comparar esta información con el listado de estos mismos profesionales a
+través de la nueva aplicación desarrollada se pudo observar que existen
+profesionales que no aparecen en el nuevo listado.
+
+Como a contar del mes pasado toda la gestión de estos profesionales se
+efectúa a partir de la información que entrega la nueva aplicación, esta
+inconsistencia de datos ha provocado que:
+
+-   Estos profesionales no puedan ser asignados para efectuar nuevas
+      consultorías que requieren ser efectuadas con urgencia, provocando
+      molestia en los clientes y pérdidas económicas para la empresa.
+
+-   Estos profesionales no hayan sido considerados en el proceso de
+      remuneraciones y se les tuvo que efectuar el pago de sus sueldos
+      en forma manual.
+
+Considerando que para CREA SOLUCIONES esta situación ya ha provocado
+algunas quejas de sus clientes y además ha presentado un problema en el
+bienestar de estos profesionales, es que se requiere de forma urgente
+solucionar este problema.
+
+Por esta razón, y para poder efectuar la corrección de estos datos, se
+requiere saber todos los Ingenieros Comerciales e Ingenieros
+Industriales que en el rediseño de la aplicación no fueron traspasados
+desde la tabla original (profesionales) hacia la nueva tabla creada para
+estos tipos de empleados.
+
+El informe solicitado por el usuario debe entregar la información que se
+muestra en el ejemplo y ordenada alfabéticamente por la profesión y el
+apellido paterno de estos profesionales:
+
+Se requiere que la construcción del requerimiento planteado DEBE ser
+implementado utilizando Operadores SET.
