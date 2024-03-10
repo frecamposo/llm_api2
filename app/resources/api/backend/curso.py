@@ -1,4 +1,4 @@
-from models.curso import Curso
+from ..models.curso import Curso
 import random as rnd
 
 cursos =[

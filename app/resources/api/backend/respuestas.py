@@ -1,4 +1,4 @@
-from models.pregunta import Pregunta
+from ..models.pregunta import Pregunta
 
 
 respuestas =[

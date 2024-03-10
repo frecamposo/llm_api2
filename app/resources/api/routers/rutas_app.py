@@ -4,9 +4,18 @@ from ..models.usuario import *
 from ..backend.user import *
 from ..models.documento import *
 from ..backend.documento import *
+from ..backend.curso import *
+from ..models.curso import *
+from ..backend.respuestas import *
+from ..models.pregunta import *
+from ..backend.historial_conversacion import *
+from ..backend.contexto import *
+from ..backend.resumen import *
+from ..backend.detalle_curso import *
+from ..backend.ticket_atencion import *
 
 rutas = APIRouter(
-    tags=["example2"],
+    tags=["API Documentos"],
     responses={404: {"description": "Not found"}},
 )
 
@@ -19,7 +28,7 @@ async def validar_login(usuario:Usuario):
 @rutas.post('/cargar_documento')
 async def cargar_documento(documento: Documento):
     return carga_documento(documento)
-'''
+
 @rutas.post('/eliminar_documento')
 async def eliminar_doc(session_id: int,curso_id:int,id_documento:int):
     return eliminar_documento(session_id,curso_id,id_documento)
@@ -73,4 +82,3 @@ async def detalle_del_curso(id_curso:int):
 async def generar_ticket(problema:str):
     return crear_ticket(problema)
     
-    '''
