@@ -7,7 +7,7 @@ services:
       dockerfile: .docker/Dockerfile
     restart: always
     hostname: fastapi_base
-    container_name: fastapi_base
+    container_name: fastapi_base2
     ports:
       - "8000:8000"
     volumes:

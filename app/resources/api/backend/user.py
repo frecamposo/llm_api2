@@ -1,4 +1,4 @@
-from models.usuario import Usuario
+from ..models.usuario import Usuario
 import random
 import json
 

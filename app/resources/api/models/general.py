@@ -1,5 +1,6 @@
 # --------------------------------------------- Modelos
-from models.usuario import *
-from models.documento import *
-from models.curso import *
-from models.pregunta import *
+'''from ..models.usuario import Usuario
+from ..models.documento import Documento
+from ..models.curso import Curso
+from ..models.pregunta import Pregunta
+'''

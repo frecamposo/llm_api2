@@ -1,6 +1,6 @@
-from models.documento import Documento
-from backend.conversores.dpf_text.convertir import *
-from backend.conversores.word_text.convertir import *
+from ..models.documento import Documento
+from ..backend.conversores.dpf_text.convertir import *
+from ..backend.conversores.word_text.convertir import *
 from pathlib import Path
 import random as rnd
 
@@ -40,7 +40,7 @@ def carga_documento(documento: Documento):
             print(fichero.read())
             
     if sw:
-        return rnd.randint(0,1000000)
+        return texto #rnd.randint(0,1000000)
     else:
         return "No Cargo Archivo, posee diferente extension"
 

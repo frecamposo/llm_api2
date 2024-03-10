@@ -1,18 +1,25 @@
 from fastapi import APIRouter, Query
-from backend.general import *
-from models.general import *
+#from backend.general import *
+from ..models.usuario import *
+from ..backend.user import *
+from ..models.documento import *
+from ..backend.documento import *
 
-rutas = APIRouter()
+rutas = APIRouter(
+    tags=["example2"],
+    responses={404: {"description": "Not found"}},
+)
 
 
 @rutas.post('/login')
-async def validar_login(usuario: Usuario):
+async def validar_login(usuario:Usuario):
     return validacion_cuenta(usuario)
+
 
 @rutas.post('/cargar_documento')
 async def cargar_documento(documento: Documento):
     return carga_documento(documento)
-
+'''
 @rutas.post('/eliminar_documento')
 async def eliminar_doc(session_id: int,curso_id:int,id_documento:int):
     return eliminar_documento(session_id,curso_id,id_documento)
@@ -65,3 +72,5 @@ async def detalle_del_curso(id_curso:int):
 @rutas.post('/crear_ticket')
 async def generar_ticket(problema:str):
     return crear_ticket(problema)
+    
+    '''

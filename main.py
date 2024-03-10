@@ -2,9 +2,12 @@ import time
 
 from app.config import app
 from app.resources.router import router as example_router
+from app.resources.api.routers.rutas_app import rutas
 
 # Agregar los endpoints adicionales por medio de routers
 app.include_router(example_router)
+app.include_router(rutas)
+
 
 @app.get("/health")
 async def get():

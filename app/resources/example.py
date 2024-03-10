@@ -7,6 +7,7 @@ from datetime import datetime
 from motor.motor_asyncio import AsyncIOMotorClient
 
 
+
 from app.auth import get_db
 from app.models.model import ExampleModel
 
@@ -100,3 +101,5 @@ async def delete_example2(name: str, db: AsyncIOMotorClient = Depends(get_db(res
     # Retornar un mensaje de éxito
     return JSONResponse(status_code=status.HTTP_200_OK, 
                         content={"message": "Data deleted successfully"})
+
+# --------------------------------------------------------------------------------------------------------------------

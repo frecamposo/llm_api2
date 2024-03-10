@@ -6,5 +6,5 @@ class Usuario(BaseModel):
     password:str = Field(default="NN", min_length=2,max_length=20,title="Password")
     inicio_anonimo: bool = Field(default=True,title="Inicio Anonimo o como Administrador")
     session_id: Optional[int]
-    nombre:Optional[str]
-    ubicacion:Optional[str]
+    nombre: Optional[str]
+    ubicacion: Optional[str]
